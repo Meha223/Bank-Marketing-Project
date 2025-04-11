@@ -61,7 +61,7 @@ elif page == "SQL Query Interface":
         csv = result_df.to_csv(index=False).encode('utf-8')
         st.download_button("Download Result as CSV", csv, "query_result.csv", "text/csv")
     except Exception as e:
-=======
+        
 # Bank Marketing dashboard
 
 import streamlit as st
