@@ -7,11 +7,11 @@ import plotly.express as px
 import duckdb
 
 # Load parquet files
-DATA_PATH = Path(r"C:\Users\khe000626\Downloads\bank_marketing_project")
-client_df = pd.read_parquet(DATA_PATH / "client.parquet")
-contact_df = pd.read_parquet(DATA_PATH / "contact.parquet")
-campaign_df = pd.read_parquet(DATA_PATH / "campaign.parquet")
-fact_df = pd.read_parquet(DATA_PATH / "fact_campaign_results.parquet")
+BASE_PATH = Path(__file__).parent
+client_df = pd.read_parquet(BASE_PATH / "client.parquet")
+contact_df = pd.read_parquet(BASE_PATH / "contact.parquet")
+campaign_df = pd.read_parquet(BASE_PATH / "campaign.parquet")
+fact_df = pd.read_parquet(BASE_PATH / "fact_campaign_results.parquet")
 
 # Merge data for EDA
 merged_df = fact_df \
