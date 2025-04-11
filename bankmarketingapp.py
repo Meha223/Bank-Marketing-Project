@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Bank Marketing dashboard
 
 import streamlit as st
@@ -126,5 +125,4 @@ elif page == "SQL Query Interface":
         csv = result_df.to_csv(index=False).encode('utf-8')
         st.download_button("Download Result as CSV", csv, "query_result.csv", "text/csv")
     except Exception as e:
->>>>>>> 5a084a203d86b73f54dd1e20183caa96dce128d3
         st.error(f"Error in query: {e}")
