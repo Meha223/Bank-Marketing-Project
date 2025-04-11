@@ -1,8 +1,12 @@
 # Bank Marketing dashboard
 
 import streamlit as st
-# Load parquet files
+from pathlib import Path
+import pandas as pd
+import plotly.express as px
+import duckdb
 
+# Load parquet files
 DATA_PATH = Path(r"C:\Users\khe000626\Downloads\bank_marketing_project")
 client_df = pd.read_parquet(DATA_PATH / "client.parquet")
 contact_df = pd.read_parquet(DATA_PATH / "contact.parquet")
@@ -21,6 +25,7 @@ page = st.sidebar.radio("Go to", ["Exploratory Data Analysis", "SQL Query Interf
 
 if page == "Exploratory Data Analysis":
     st.title("Exploratory Data Analysis")
+    
     st.markdown("### Distribution of Subscriptions by Age Group")
     fig_age = px.histogram(merged_df, x="age_group", color="subscribed", barmode="group")
     st.plotly_chart(fig_age)
