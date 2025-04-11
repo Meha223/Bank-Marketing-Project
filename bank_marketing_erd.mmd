@@ -1,0 +1,39 @@
+
+erDiagram
+    client {
+        INT client_id PK
+        INT age
+        STRING job
+        STRING marital
+        STRING education
+        STRING credit_default
+        STRING housing
+        STRING loan
+        STRING age_group
+    }
+    contact {
+        INT contact_id PK
+        STRING contact
+        STRING month
+        STRING day
+        INT duration
+        STRING duration_length
+    }
+    campaign {
+        INT campaign_id PK
+        INT campaign
+        INT pdays
+        INT previous
+        STRING poutcome
+    }
+    fact_campaign_results {
+        INT fact_id PK
+        INT client_id FK
+        INT contact_id FK
+        INT campaign_id FK
+        STRING subscribed
+    }
+
+    fact_campaign_results ||--|| client : "FK_client_id"
+    fact_campaign_results ||--|| contact : "FK_contact_id"
+    fact_campaign_results ||--|| campaign : "FK_campaign_id"
