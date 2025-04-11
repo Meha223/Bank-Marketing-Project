@@ -50,12 +50,12 @@ elif page == "SQL Query Interface":
 
     st.markdown("### Run SQL on Parquet Data")
     sql = st.text_area("Write your SQL query below:",
-                      """
-                      SELECT job, COUNT(*) AS total
-                      FROM merged_df
-                      GROUP BY job
-                      ORDER BY total DESC
-                      """)
+"""SELECT job, COUNT(*) AS total
+FROM merged_df
+GROUP BY job
+ORDER BY total DESC"""
+)
+
 
     try:
         con = duckdb.connect()
